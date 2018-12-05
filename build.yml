@@ -1,0 +1,10 @@
+- type: image
+  name: gcr.io/hail-vdc/image
+  file: Dockerfile
+  context: .
+- type: execute
+  name: run
+  image: gcr.io/hail-vdc/image
+  dependsOn:
+    - gcr.io/hail-vdc/image
+  cmd: ["/bin/sh", "build.sh"]
